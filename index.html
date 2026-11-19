@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aryan Maheshwari Portfolio</title>
+<meta name="description" content="Aryan Maheshwari: Finance and Economics student at UT Dallas. Portfolio, resume highlights, goals and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: minimal, classic, professional, like a clean Canva portfolio.
+   IDEA: a printed personal portfolio booklet, with an intro page, experience, goals and contact card.
+   PICTURE: a full-width black header panel with the name, set like a book cover.
+   COLOUR and TYPE: white, black ink, soft grey bands only; Playfair Display headings + Inter body.
+   LAYOUT: simple top nav, cover header, then alternating white and grey sections, contact card last. */
+:root{color-scheme:light;
+  --bg:#ffffff;--ink:#111111;--muted:#5f5f5f;--line:#e3e3e3;--grey:#f4f4f4;--black:#111111}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 "Inter",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.1;text-wrap:balance;margin:0;font-weight:600}
+h2{font-size:clamp(30px,4vw,42px);margin-bottom:8px}
+h3{font-size:21px}
+p{margin:0 0 14px}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto}
+.band{padding:clamp(48px,6vw,90px) max(5vw,18px)}
+.grey{background:var(--grey)}
+.kicker{font-size:14px;color:var(--muted);margin-bottom:10px}
+.rule{width:56px;height:2px;background:var(--ink);margin:16px 0 28px}
+.lede{color:var(--muted);max-width:60ch}
+
+nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:16px;padding:0 max(5vw,18px);min-height:62px;flex-wrap:wrap}
+nav .brand{font:600 19px "Playfair Display",serif;text-decoration:none;margin-right:auto}
+nav .links{display:flex;gap:2px;overflow-x:auto}
+nav .links a{flex:none;text-decoration:none;padding:12px 10px;font-size:15px;color:var(--muted)}
+nav .links a:hover{color:var(--ink)}
+@media(max-width:720px){nav .wrap{padding-top:8px;gap:0}nav .links{width:100%;margin:0 -10px}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;font-weight:500;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);border-radius:2px;transition:background .2s,color .2s}
+.btn.solid{background:var(--ink);color:#fff}
+.btn.solid:hover{background:#333}
+.btn.line:hover{background:var(--ink);color:#fff}
+.btn.light{border-color:#fff;color:#fff}
+.btn.light:hover{background:#fff;color:var(--ink)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+
+/* cover */
+.cover{padding:clamp(36px,5vw,64px) max(5vw,18px) 0}
+.cover .top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.cover h1{font-size:clamp(44px,7vw,84px);font-weight:600;letter-spacing:-.01em}
+.cover .role{font-size:18px;color:var(--muted);margin-top:10px}
+.panel{background:var(--black);color:#fff;position:relative;overflow:hidden;min-height:320px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.panel svg{position:absolute;inset:0;width:100%;height:100%}
+.panel .inner{position:relative;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:flex-end;gap:18px}
+.panel .quote{font:500 clamp(22px,2.6vw,30px)/1.3 "Playfair Display",serif;max-width:22ch}
+.facts-row{display:flex;gap:36px;flex-wrap:wrap}
+.facts-row b{display:block;font:600 30px "Playfair Display",serif}
+.facts-row span{font-size:14px;color:#bdbdbd}
+@media(max-width:760px){.panel{grid-template-columns:minmax(0,1fr)}.panel .spacer{display:none}}
+
+/* intro */
+.intro{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media(max-width:860px){.intro{grid-template-columns:minmax(0,1fr)}}
+.player{display:grid;place-items:center;aspect-ratio:16/9;background:#1a1a1a;color:#fff;text-decoration:none;position:relative}
+.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.play{width:72px;height:72px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;transition:transform .2s}
+.player:hover .play{transform:scale(1.07)}
+.play svg{width:26px;height:26px;margin-left:4px}
+.player .cap{position:absolute;left:16px;bottom:12px;font-size:14px;color:#cfcfcf}
+.vcap{font-size:14.5px;color:var(--muted);margin-top:12px}
+.about p{font-size:17.5px}
+.skills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:20px 0 0}
+.skills li{border:1px solid var(--line);padding:5px 12px;font-size:14px;background:#fff}
+
+/* experience */
+.hl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media(max-width:900px){.hl{grid-template-columns:minmax(0,1fr)}}
+.card{background:#fff;border:1px solid var(--line);padding:26px;display:flex;flex-direction:column}
+.card .n{font-size:13.5px;color:var(--muted);margin-bottom:10px}
+.card .meta{font-size:14.5px;color:var(--muted);margin:4px 0 14px}
+.card .why{margin:auto 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
+@media(max-width:700px){.more{grid-template-columns:minmax(0,1fr)}}
+.more div{background:#fff;border:1px solid var(--line);padding:22px 26px}
+.more ul{margin:10px 0 0;padding-left:18px}
+.more li{margin:5px 0}
+.resume-row{margin-top:28px}
+
+/* goals */
+.goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+@media(max-width:860px){.goals{grid-template-columns:minmax(0,1fr)}}
+.goal{padding:26px 26px 10px 0}
+.goal+.goal{padding-left:26px;border-left:1px solid var(--line)}
+@media(max-width:860px){.goal+.goal{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+.when{font-size:13.5px;color:var(--muted);margin-bottom:8px}
+.goal h3{margin-bottom:10px}
+.goal ul{margin:0;padding-left:18px}
+.goal li{margin:6px 0}
+.comm{margin-top:28px;border-left:2px solid var(--ink);padding:4px 0 4px 22px;max-width:75ch}
+.comm h3{margin-bottom:6px}
+
+/* beyond */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media(max-width:860px){.facts{grid-template-columns:minmax(0,1fr)}}
+.fact{background:#fff;border:1px solid var(--line);padding:26px}
+.fact h3{margin-bottom:8px}
+.fact p{margin:0;color:var(--muted)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center}
+@media(max-width:700px){.contact{grid-template-columns:minmax(0,1fr)}}
+.photo{width:180px;height:220px;background:var(--grey);border:1px solid var(--line);display:grid;place-items:center;font:600 44px "Playfair Display",serif;color:#9a9a9a;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.clist{list-style:none;padding:0;margin:18px 0 24px}
+.clist li{display:flex;gap:16px;padding:10px 0;border-bottom:1px solid var(--line)}
+.clist li span{width:90px;flex:none;color:var(--muted);font-size:14.5px}
+.clist a{overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:20px max(5vw,18px)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Aryan Maheshwari</a>
+    <div class="links">
+      <a href="#intro">Introduction</a>
+      <a href="#experience">Experience</a>
+      <a href="#goals">Goals</a>
+      <a href="#beyond">Beyond work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="cover" id="top">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="kicker">Professional portfolio</div>
+        <h1>Aryan Maheshwari</h1>
+        <div class="role">Finance and Economics Student · The University of Texas at Dallas</div>
+      </div>
+      <div class="btns">
+        <!-- REPLACE with your LinkedIn URL -->
+        <a class="btn solid" href="https://www.linkedin.com/in/aryan-maheshwari12/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn line" href="#contact">Contact me</a>
+      </div>
+    </div>
+    <div class="panel">
+      <svg viewBox="0 0 1100 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="#ffffff" stroke-opacity=".09">
+          <path d="M0 300 C200 290 300 240 450 230 S700 150 850 110 S1050 40 1100 30"/>
+          <path d="M0 320 C220 305 330 265 480 250 S720 175 870 135 S1060 70 1100 60"/>
+          <path d="M0 280 C180 275 280 215 420 210 S680 125 830 85 S1040 15 1100 5"/>
+        </g>
+        <path d="M560 260 L650 230 L720 238 L800 180 L870 160 L950 105 L1040 70" fill="none" stroke="#ffffff" stroke-opacity=".75" stroke-width="2.5"/>
+        <g fill="#111" stroke="#fff" stroke-width="2">
+          <circle cx="560" cy="260" r="5"/><circle cx="650" cy="230" r="5"/><circle cx="720" cy="238" r="5"/><circle cx="800" cy="180" r="5"/><circle cx="870" cy="160" r="5"/><circle cx="950" cy="105" r="5"/>
+        </g>
+        <circle cx="1040" cy="70" r="7" fill="#fff"/>
+      </svg>
+      <div class="inner">
+        <p class="quote">Every number tells the story of a decision.</p>
+        <div class="facts-row">
+          <div><b>4.00</b><span>Major GPA</span></div>
+          <div><b>Dean's List</b><span>UT Dallas</span></div>
+          <div><b>Dec 2027</b><span>Expected graduation</span></div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="band" id="intro">
+  <div class="wrap">
+    <h2>Introduction</h2>
+    <div class="rule"></div>
+    <div class="intro">
+      <div>
+        <!-- REPLACE the href with your YouTube (Unlisted) or Drive video link.
+             On GitHub Pages you can embed instead: replace this <a> with
+             <div class="player"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Aryan Maheshwari introduction" allowfullscreen></iframe></div> -->
+        <a class="player" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Play my 30-second introduction video">
+          <span class="play"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span>
+          <span class="cap">0:30 · Tell me about yourself</span>
+        </a>
+        <p class="vcap">A 30-second introduction: who I am, what I've done in finance so far, and where I'm headed next.</p>
+      </div>
+      <div class="about">
+        <h3 style="margin-bottom:12px">About me</h3>
+        <p>I'm Aryan Maheshwari, a Finance major adding a second major in Economics at the University of Texas at Dallas. I'm drawn to work where the numbers have to hold up under scrutiny: supporting M&amp;A tax due diligence at EY, screening early-stage companies for HP Tech Ventures, and researching how firms design preferred stock issues with Dr. Robert Kieschnick. Along the way, I've built a toolkit in financial modeling, Excel, Python, SQL and Power BI. I hold a 4.00 GPA in my major and a place on the Dean's List, and I bring that same consistency to every team I join.</p>
+        <ul class="skills" aria-label="Skills">
+          <li>DCF, comps, 3-statement models</li><li>Advanced Excel</li><li>Python</li><li>SQL</li><li>Power BI</li><li>Bloomberg</li><li>English and Hindi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band grey" id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="rule"></div>
+    <p class="lede" style="margin-bottom:28px">Three highlights from my resume: the deal, the investor, and the research behind the numbers.</p>
+    <div class="hl">
+      <article class="card">
+        <div class="n">Highlight 1</div>
+        <h3>Ernst &amp; Young</h3>
+        <div class="meta">Summer Intern · Pune, India · Summer 2026</div>
+        <p>Supported M&amp;A tax due diligence, helping review target-company records for tax exposure that could affect a transaction.</p>
+        <p class="why">What I took away: how detail-level accuracy protects a deal, and how to work inside a global Big Four team.</p>
+      </article>
+      <article class="card">
+        <div class="n">Highlight 2</div>
+        <h3>HP Tech Ventures</h3>
+        <div class="meta">Deal Sourcing &amp; Startup Analysis Extern · Remote · Jan to Mar 2026</div>
+        <p>Sourced and analyzed early-stage startups for a corporate venture capital team, evaluating business models and strategic fit.</p>
+        <p class="why">What I took away: thinking like an investor, and turning research into a clear recommendation.</p>
+      </article>
+      <article class="card">
+        <div class="n">Highlight 3</div>
+        <h3>UT Dallas Research</h3>
+        <div class="meta">Undergraduate Research Assistant to Dr. Robert Kieschnick · 2026</div>
+        <p>Researched how companies design preferred stock issuances, working through academic literature and securities data.</p>
+        <p class="why">What I took away: the discipline of asking a precise question and backing every answer with evidence.</p>
+      </article>
+    </div>
+    <div class="more">
+      <div>
+        <h3>More experience and leadership</h3>
+        <ul>
+          <li>Finance Analyst Intern, Red Elephant (Sep to Nov 2025)</li>
+          <li>Investments Member, Fintech UTD (since Feb 2026)</li>
+          <li>Campaign Coordinator, BudgetBridge Collective (since May 2025)</li>
+          <li>Team Leader, Financial Leadership Association (Fall 2024)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Certifications and honors</h3>
+        <ul>
+          <li>Wharton Business Foundations Certificate</li>
+          <li>Bloomberg Market Concepts (BMC)</li>
+          <li>Dean's List, UT Dallas</li>
+          <li>4.00 Major GPA</li>
+        </ul>
+      </div>
+    </div>
+    <div class="resume-row">
+      <!-- REPLACE the href with a link to your resume PDF -->
+      <a class="btn solid" href="#" target="_blank" rel="noopener">My resume</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="goals">
+  <div class="wrap">
+    <h2>Goals</h2>
+    <div class="rule"></div>
+    <div class="goals">
+      <div class="goal">
+        <div class="when">Next 12 months</div>
+        <h3>Land the right internship</h3>
+        <ul>
+          <li>Secure a Summer 2027 internship in corporate finance, FP&amp;A or banking</li>
+          <li>Pass the FINRA SIE exam</li>
+          <li>Keep my major GPA at 4.00</li>
+        </ul>
+      </div>
+      <div class="goal">
+        <div class="when">2027 to 2028</div>
+        <h3>Finish strong</h3>
+        <ul>
+          <li>Graduate in December 2027 with a double major in Finance and Economics</li>
+          <li>Complete the 150 credit hours for CPA eligibility by Spring 2028</li>
+        </ul>
+      </div>
+      <div class="goal">
+        <div class="when">Long term</div>
+        <h3>Advise on big decisions</h3>
+        <ul>
+          <li>Earn my CPA</li>
+          <li>Grow into a finance leader who helps companies make capital and deal decisions with confidence</li>
+        </ul>
+      </div>
+    </div>
+    <div class="comm">
+      <h3>My communication goal</h3>
+      <p>Analysis only matters if people act on it. My goal is to explain what a model means in under two minutes, leading with the answer and then the evidence, so that a manager or client can make a decision without reading the spreadsheet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band grey" id="beyond">
+  <div class="wrap">
+    <h2>Beyond work</h2>
+    <div class="rule"></div>
+    <div class="facts">
+      <div class="fact">
+        <h3>Bilingual</h3>
+        <p>I'm fluent in English and Hindi, which helped me hit the ground running with my EY team in Pune.</p>
+      </div>
+      <div class="fact">
+        <h3>Always learning</h3>
+        <p>Outside of class, I earned the Wharton Business Foundations Certificate and Bloomberg Market Concepts certification to sharpen my business and markets knowledge.</p>
+      </div>
+      <div class="fact">
+        <h3>Student investor</h3>
+        <p>As an Investments Member at Fintech UTD, I research companies and pitch ideas with other students who love markets as much as I do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap contact">
+    <!-- To add a headshot, replace "AM" with: <img src="headshot.jpg" alt="Aryan Maheshwari"> -->
+    <div class="photo" aria-hidden="true">AM</div>
+    <div>
+      <h2>Contact me</h2>
+      <p class="lede">I'm looking for Summer 2027 opportunities in corporate finance, FP&amp;A and banking.</p>
+      <ul class="clist">
+        <!-- REPLACE the LinkedIn link and email below -->
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/aryan-maheshwari12/" target="_blank" rel="noopener">linkedin.com/in/aryan-maheshwari12</a></li>
+        <li><span>Email</span><a href="mailto:axm240016@utdallas.edu">axm240016@utdallas.edu</a></li>
+        <li><span>Location</span><span style="width:auto;color:var(--ink)">Plano, TX</span></li>
+      </ul>
+      <a class="btn solid" href="https://www.linkedin.com/in/aryan-maheshwari12/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Aryan Maheshwari</span><span>Naveen Jindal School of Management, UT Dallas</span></div></footer>
+</body>
+</html>
